@@ -80,10 +80,9 @@ public class Pagina {
         }
         try (BufferedReader reader = new BufferedReader(bridge)) {
             String linha;
-            do {
-                linha = reader.readLine();
-                armazem.append(linha).append('\n');
-            } while (linha != null);
+            while((linha = reader.readLine()) != null) {
+                armazem.append(linha);
+            }
         }
     }
 }

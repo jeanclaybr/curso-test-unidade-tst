@@ -2,6 +2,7 @@ package org.jc.exercicios.colecoes;
 
 import java.util.Arrays;
 import java.util.List;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -28,7 +29,7 @@ public class TagsTest {
     }
 
     @Test
-    public void retornaListaVaziaParaStringEmBrabcoNoConstrutor() {
+    public void retornaListaVaziaParaStringEmBrancoNoConstrutor() {
         Tags instance = new Tags("       ");
         List<String> result = instance.toList();
         assertTrue("Esperada lista vazia, mas foi: " + result,
@@ -46,9 +47,9 @@ public class TagsTest {
     @Test
     public void retornaListaComUmElementoParaDelimitadorVazio() {
         Tags instance = new Tags("A:B:C", "");
-        List<String> esperada = Arrays.asList("A:B:C");
         List<String> result = instance.toList();
-        assertEquals(esperada, result);
+        Assertions.assertThat(result)
+            .containsExactly("A:B:C");
     }
     
         @Test
@@ -62,9 +63,9 @@ public class TagsTest {
     @Test
     public void retornaListaBaseadaNoDelimitadorPadrao() {
         Tags instance = new Tags("A:B:C");
-        List<String> esperada = Arrays.asList("A", "B", "C");
         List<String> result = instance.toList();
-        assertEquals(esperada, result);
+        Assertions.assertThat(result)
+            .containsExactly("A", "B", "C");
     }
 
     @Test

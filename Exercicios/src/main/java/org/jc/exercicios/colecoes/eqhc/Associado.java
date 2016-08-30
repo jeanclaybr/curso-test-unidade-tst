@@ -71,12 +71,11 @@ public class Associado {
         boolean equal;
         if(obj instanceof Associado) {
             Associado outro = (Associado) obj;
-            equal = new EqualsBuilder().appendSuper(super.equals(obj))
+            equal = new EqualsBuilder()
                 .append(nome, outro.nome).append(matricula, outro.matricula)
                 .append(cpf, outro.cpf).append(rg, outro.rg)
                 .append(nascimento, outro.nascimento)
                 .append(associacao, outro.associacao)
-                .append(dependentes, outro.dependentes)
                 .isEquals();
         } else {
             equal = false;
@@ -86,9 +85,9 @@ public class Associado {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(13, 31).appendSuper(super.hashCode())
+        return new HashCodeBuilder(13, 31)
             .append(nome).append(matricula).append(cpf).append(rg)
-            .append(nascimento).append(associacao).append(dependentes)
+            .append(nascimento).append(associacao)
             .toHashCode();
     }
     
