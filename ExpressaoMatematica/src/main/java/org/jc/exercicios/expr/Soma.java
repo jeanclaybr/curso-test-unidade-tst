@@ -9,20 +9,15 @@ package org.jc.exercicios.expr;
  *
  * @author jean
  */
-public class Soma implements Nodo {
-
-    private final Nodo esquerda;
-    private final Nodo direita;
+public class Soma extends Operacao {
 
     public Soma(Nodo esquerda, Nodo direita) {
-        this.esquerda = esquerda;
-        this.direita = direita;
+        super(esquerda, direita);
     }
 
     @Override
-    public int avalia() {
-        return this.esquerda.avalia()
-            + this.direita.avalia();
+    protected int executa(int esquerda, int direita) {
+        return esquerda + direita;
     }
 
 }
