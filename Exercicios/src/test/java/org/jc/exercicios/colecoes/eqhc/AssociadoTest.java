@@ -56,7 +56,7 @@ public class AssociadoTest {
              * Necessário quando a estrutura de dados é recursiva A -> B -> A
              * Ver: http://jqno.nl/equalsverifier/errormessages/recursive-datastructure/
              */
-            .withPrefabValues(Dependente.class, uhura, spock)
+           .withPrefabValues(Dependente.class, uhura, spock)
             /*
              * Ignora campos não utilizados em equals/hashCode
              */

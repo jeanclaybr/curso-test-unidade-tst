@@ -43,15 +43,15 @@ public class DownloadServlet extends HttpServlet {
         if (authenticated) {
             String identificacao = StringUtils.defaultIfEmpty(
                 req.getParameter("cpf_cnpj"),
-                "0"
+                ""
             );
             String data = StringUtils.defaultIfEmpty(
                 req.getParameter("dt_emissao"),
-                "1822-09-07"
+                ""
             );
             String numero = StringUtils.defaultIfEmpty(
                 req.getParameter("num_nf"),
-                "0"
+                ""
             );
             File dir = new File(System.getProperty("nfe.dir"));
             if (identificacao.matches("\\d+") && numero.matches("\\d+")
@@ -70,7 +70,7 @@ public class DownloadServlet extends HttpServlet {
                         String line;
                         while ((line = reader.readLine()) != null) {
                             writer.write(line);
-                            writer.println();
+//                            writer.println();
                         }
                         writer.flush();
                     }

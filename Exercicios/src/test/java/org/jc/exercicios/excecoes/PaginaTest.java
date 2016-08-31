@@ -53,7 +53,8 @@ public class PaginaTest {
     @Test
     public void falhaComUrlMalFormada() throws Exception {
         Pagina pagina = new Pagina("htt://xpto.com");
-        Throwable throwable = Assertions.catchThrowable(() -> pagina.download());
+        Throwable throwable = Assertions
+            .catchThrowable(() -> pagina.download());
         Assertions.assertThat(throwable)
             .hasCauseInstanceOf(MalformedURLException.class)
             .isInstanceOf(DownloadException.class)
