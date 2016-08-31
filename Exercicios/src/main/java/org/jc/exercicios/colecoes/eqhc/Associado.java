@@ -67,7 +67,7 @@ public class Associado {
     }
 
     @Override
-    public boolean equals(final Object obj) {
+    public final boolean equals(final Object obj) {
         boolean equal;
         if(obj instanceof Associado) {
             Associado outro = (Associado) obj;
@@ -84,7 +84,7 @@ public class Associado {
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return new HashCodeBuilder(13, 31)
             .append(nome).append(matricula).append(cpf).append(rg)
             .append(nascimento).append(associacao)

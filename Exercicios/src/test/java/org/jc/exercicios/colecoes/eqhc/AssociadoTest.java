@@ -8,6 +8,7 @@ package org.jc.exercicios.colecoes.eqhc;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.function.Predicate;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.groups.Tuple;
 import org.junit.Test;
@@ -36,7 +37,32 @@ public class AssociadoTest {
         Assertions.assertThat(result)
             .extracting("nome", "nascimento")
             .contains(new Tuple("pje", agora));
-    }     
+    } 
+
+    @Test
+    public void verificaContratoEqualsHashCode() {
+        Associado kirk = new Associado(
+            1L,
+            "Teste",
+            "12345",
+            "54321",
+            LocalDate.MIN,
+            LocalDate.MIN
+        );
+        Dependente spock = new Dependente(kirk, "Spock", LocalDate.MIN);
+        Dependente uhura = new Dependente(kirk, "Uhura", LocalDate.MIN);
+        EqualsVerifier.forClass(Associado.class)
+            /*
+             * Necessário quando a estrutura de dados é recursiva A -> B -> A
+             * Ver: http://jqno.nl/equalsverifier/errormessages/recursive-datastructure/
+             */
+            .withPrefabValues(Dependente.class, uhura, spock)
+            /*
+             * Ignora campos não utilizados em equals/hashCode
+             */
+            .withIgnoredFields("dependentes")
+            .verify();
+    }
     
     
 }
