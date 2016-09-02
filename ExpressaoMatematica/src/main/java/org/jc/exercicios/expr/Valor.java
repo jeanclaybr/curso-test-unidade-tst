@@ -21,4 +21,11 @@ public class Valor implements Nodo {
     public int avalia() {
         return this.val;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(val);
+    }
+    
+    
 }

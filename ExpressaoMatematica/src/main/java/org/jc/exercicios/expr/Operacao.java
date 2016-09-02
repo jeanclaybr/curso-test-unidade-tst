@@ -18,11 +18,21 @@ public abstract class Operacao implements Nodo {
         this.direita = direita;
     }
 
+   
     @Override
     public final int avalia() {
         return executa(this.esquerda.avalia(), this.direita.avalia());
     }
     
     protected abstract int executa(int esquerda, int direita);
+    
+    protected abstract String simbolo();
+
+    @Override
+    public String toString() {
+        return  "(" + esquerda + " " + simbolo() + " " + direita + ")";
+    }
+    
+    
     
 }

@@ -20,4 +20,9 @@ public class Soma extends Operacao {
         return esquerda + direita;
     }
 
+    @Override
+    protected String simbolo() {
+        return "+";
+    }
+
 }

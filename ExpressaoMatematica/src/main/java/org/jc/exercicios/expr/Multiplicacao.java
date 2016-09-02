@@ -19,5 +19,9 @@ public class Multiplicacao extends Operacao {
     protected int executa(int esquerda, int direita) {
         return esquerda * direita;
     }
-    
+
+    @Override
+    protected String simbolo() {
+        return "*";
+    }
 }
