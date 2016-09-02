@@ -1,0 +1,57 @@
+[
+    {
+        "polo": "ativo",
+        "advogados": [
+            {
+                "oab": "123456-DF",
+                "nome": "Jean Luc Picard",
+                "status": "principal"
+            },
+            {
+                "oab": "223456-DF",
+                "nome": "Comandante Data",
+                "status": "auxiliar"
+            },
+            {
+                "oab": "123456-GO",
+                "nome": "Tenente Riker",
+                "status": "auxiliar"
+            },
+            {
+                "oab": "323456-DF",
+                "nome": "Vitor Body Builder",
+                "status": "estagiario"
+            }
+        ],
+        "partes": [
+            {
+                "cpf_cnpj": "02.246.953/0001-60",
+                "nome": "Federação de Planetas"
+            },
+            {
+                "cpf_cnpj": "609.880.956-96",
+                "nome": "James T. Kirk"
+            },
+            {
+                "cpf_cnpj": "709.880.956-96",
+                "nome": "Spock"
+            }
+        ]
+    },
+    {
+        "polo": "passivo",
+        "advogados": [
+            {
+                "oab": "123456-DF",
+                "nome": "Tomás",
+                "status": "principal"
+            }
+        ],
+        "partes": [
+            {
+                "cpf_cnpj": "609.880.956-96",
+                "nome": "James T. Kirk"
+            }
+        ]
+    }
+]
